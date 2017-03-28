@@ -20,14 +20,7 @@ class Triangulo extends FiguraGeomotrica
     }
     public function Dibujar()
     {
-        for ($i=0; $i < $this->_ladoUno; $i++) 
-        { 
-            for ($j=0; $j < $this->_ladoDos; $j++) 
-            { 
-                echo "*";
-            }
-            echo "<br>";
-        }
+        
     }
     public function ToString()
     {
