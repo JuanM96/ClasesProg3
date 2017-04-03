@@ -1,10 +1,10 @@
 <?php
 require_once "Empleado.php";
 require_once "Fabrica.php";
-$empleado1 = new empleado("Dario","Fernandez",39029433,"Masculino",234432,23000);
+$empleado1 = new empleado("Juan","Gomez",39029433,"Masculino",234432,23000);
 echo $empleado1->ToString()."<BR>";
-echo $empleado1->Hablar("Aleman");
-$fabrica = new fabrica("HFC");
+echo $empleado1->Hablar("Ingles");
+$fabrica = new fabrica("Oreo");
 $fabrica->AgregarEmpleado($empleado1);
 echo "<BR>".$fabrica->ToString();
 echo $fabrica->CalcularSueldos();
