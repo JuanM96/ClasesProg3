@@ -27,7 +27,7 @@ class Empleado extends Persona
     }
     function ToString()
     {
-        return parent::ToString()." - legajo: ".$this->getLegajo()." - Sueldo: ".$this->getSueldo();
+        return parent::ToString()."-".$this->getLegajo()."-".$this->getSueldo();
     }
 }
 

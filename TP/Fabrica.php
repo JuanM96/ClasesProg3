@@ -1,7 +1,4 @@
 <?php
-/**
- * 
- */
 require_once "Empleado.php";
 class Fabrica
 {
@@ -15,7 +12,6 @@ class Fabrica
     function AgregarEmpleado($persona)
     {
         array_push($this->_empleados,$persona);
-        
     }
     function CalcularSueldos()
     {
@@ -37,12 +33,36 @@ class Fabrica
 
     function ToString()
     {
-        $retorno = "Razon Social: ".$this->_razonsocial."<BR>";
+        $ret = "-".$this->_razonsocial."<BR>";
         foreach ($this->_empleados as $empleado)
         {
-            $retorno.=$empleado->ToString()."<BR>";
+            $ret.=$empleado->ToString()."<BR>";
         }
-        return $retorno;
+        return $ret;
+    }
+
+    function GuardarFabrica()
+    {
+        $archivo = fopen("fabrica.txt",'w');
+        foreach ($this->_empleados as $empleado)
+        {
+            fwrite($archivo,$empleado->ToString()."\n");
+        }
+        fclose($archivo);
+    }
+    function LeerFabrica()
+    {
+        if(file_exists("fabrica.txt"))
+        {
+            $archivo = fopen("fabrica.txt","r");
+            while(!feof($archivo))
+            {
+                $array = explode("-",fgets($archivo));
+                $this->AgregarEmpleado(new Empleado($array[0],$array[1],$array[2],$array[3],$array[4],$array[5]));
+            }
+            fclose($archivo);
+            
+        }
     }
 }
 

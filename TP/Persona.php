@@ -40,7 +40,7 @@ abstract class Persona
 
     function ToString()
     {
-        return "Nombre: ".$this->getNombre()." - Apellido: ".$this->getApellido()." - DNI: ".$this->getDni()." - Sexo: ".$this->getSexo();
+        return $this->getNombre()."-".$this->getApellido()."-".$this->getDni()."-".$this->getSexo();
     }
 }
 
