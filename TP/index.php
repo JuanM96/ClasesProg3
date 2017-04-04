@@ -10,11 +10,10 @@ $fabrica = new fabrica("Oreo");
 echo "<BR>".$fabrica->ToString();
 echo $fabrica->CalcularSueldos();
 $fabrica->EliminarEmpleado($empleado1);
-echo "<BR>".$fabrica->ToString();
+echo "<BR>".$fabrica->ToString();*/
 $fabrica->AgregarEmpleado($empleado1);
 $fabrica->AgregarEmpleado($empleado2);
-echo "<BR>".$fabrica->ToString();*/
+//echo "<BR>".$fabrica->ToString();
 $fabrica->GuardarFabrica();
-$fabrica->LeerFabrica();
-echo "<BR>-------".$fabrica->ToString();
+echo "<BR>DESPUES DE GUARDAR<BR>".$fabrica->ToString();
 ?>

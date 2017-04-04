@@ -6,7 +6,7 @@ class Fabrica
     private $_razonsocial;
     function __construct($razonSocial)
     {
-        $this->_empleados=array();
+        $this->_empleados= $this->LeerFabrica();
         $this->_razonsocial = $razonSocial;
     }
     function AgregarEmpleado($persona)
@@ -52,17 +52,25 @@ class Fabrica
     }
     function LeerFabrica()
     {
+        $ret = array();
         if(file_exists("fabrica.txt"))
         {
+            
             $archivo = fopen("fabrica.txt","r");
             while(!feof($archivo))
             {
                 $array = explode("-",fgets($archivo));
-                $this->AgregarEmpleado(new Empleado($array[0],$array[1],$array[2],$array[3],$array[4],$array[5]));
+                //$this->AgregarEmpleado(new Empleado($array[0],$array[1],$array[2],$array[3],$array[4],$array[5]));
+                if(count($array) != 1)
+                {
+                    array_push($ret,new Empleado($array[0],$array[1],$array[2],$array[3],$array[4],$array[5]));
+                }
+                
             }
             fclose($archivo);
             
         }
+        return $ret;
     }
 }
 
