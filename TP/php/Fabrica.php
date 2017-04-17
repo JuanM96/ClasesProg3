@@ -43,20 +43,20 @@ class Fabrica
 
     function GuardarFabrica()
     {
-        $archivo = fopen("fabrica.txt",'w');
+        $archivo = fopen("../backup/fabrica.txt",'wa+');
         foreach ($this->_empleados as $empleado)
         {
-            fwrite($archivo,$empleado->ToString()."\n");
+            fwrite($archivo,$empleado->ToString());
         }
         fclose($archivo);
     }
     function LeerFabrica()
     {
         $ret = array();
-        if(file_exists("fabrica.txt"))
+        if(file_exists("empleado.txt"))
         {
             
-            $archivo = fopen("fabrica.txt","r");
+            $archivo = fopen("empleado.txt","r");
             while(!feof($archivo))
             {
                 $array = explode("-",fgets($archivo));
