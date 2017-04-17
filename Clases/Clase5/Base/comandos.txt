@@ -1,0 +1,3 @@
+INSERT INTO `Localidad`( `descripcion`) VALUES ("Quilmes")
+INSERT INTO `usuario`(`nombre`, `apellido`, `legajo`, `id-loc`) VALUES ("Juan","Murcia",25154,1)
+SELECT U.nombre,L,descripcion FROM usuario AS U,localidad as L WHERE U.id-loc = L.id AND U.legajo >100
