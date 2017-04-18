@@ -1,3 +1,10 @@
 INSERT INTO `Localidad`( `descripcion`) VALUES ("Quilmes")
 INSERT INTO `usuario`(`nombre`, `apellido`, `legajo`, `id-loc`) VALUES ("Juan","Murcia",25154,1)
 SELECT U.nombre,L,descripcion FROM usuario AS U,localidad as L WHERE U.id-loc = L.id AND U.legajo >100
+
+
+
+----
+INSERT INTO `provedores`(`Numero`, `Nombre`, `Domicilio`, `Localidad`) VALUES (100,"Perez","Peron 876","Quilmes"),(101,"Gimenez","Mitre 750","Avellaneda"),(102,"Aguirre","Boedo 634","Bernal")
+INSERT INTO `Productos`(`pNumero`, `pNombre`, `Precio`, `Tamaño`) VALUES (1,"Caramelos",1.5,"Chico"),(2,"Cigarrillos",45.89,"Mediano"),(3,"Gaseosa",15.80,"Grande")
+INSERT INTO `Envios`(`Numero`, `pNumero`, `Cantidad`) VALUES (100,1,500),(100,2,1500),(100,3,100),(101,2,55),(101,3,225),(102,1,600),(102,3,300)
