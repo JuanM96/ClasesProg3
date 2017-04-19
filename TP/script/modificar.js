@@ -25,5 +25,10 @@ function EmpleadoSelecto(){
     req.send();
 }
 function MostrarEmpleado(){
-
+    var miselecthtml = document.getElementById("idEmpleados");
+    if (req.readyState == 4) 
+    {
+        alert(req.responseText);
+        //miselecthtml.innerHTML = req.responseText;
+    }
 }

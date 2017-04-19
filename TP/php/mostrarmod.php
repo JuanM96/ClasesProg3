@@ -18,7 +18,17 @@ $cont = 0;
 // echo "<a href='../index.html'>Volver a Inicio</a><br>";
 
 // fclose($archivo);
-if (isset($_GET)) {
+if(isset($_GET) && $_GET["value"] != null){
+    while (!feof($archivo)) {
+        $linea = fgets($archivo);
+        $arrayEmpleado = explode("-",$linea);
+        if (count($arrayEmpleado) != 1 && $cont == $_GET["value"]) {
+            echo var_dump($arrayEmpleado);
+        }
+        $cont += 1;
+    }
+}
+elseif (isset($_GET)) {
     while (!feof($archivo)) {
         $linea = fgets($archivo);
         $arrayEmpleado = explode("-",$linea);
@@ -28,6 +38,7 @@ if (isset($_GET)) {
         $cont += 1;
     }
 }
+
 // elseif (isset($_POST)) {
     
 // }
