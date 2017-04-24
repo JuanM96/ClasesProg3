@@ -23,7 +23,7 @@
 
 <?php 
 
-$ArrayDeProductos = Producto::TraerTodosLosProductos();
+$ArrayDeProductos = Producto::TraerTodosLosProductosBase();
 
 echo "<table class='table'>
 		<thead>

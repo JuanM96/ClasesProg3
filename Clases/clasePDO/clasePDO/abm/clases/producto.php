@@ -1,4 +1,5 @@
 <?php
+include_once("AccesoDatos.php");
 class Producto
 {
 //--------------------------------------------------------------------------------//
@@ -98,6 +99,13 @@ class Producto
 		
 		return $ListaDeProductosLeidos;
 		
+	}
+	public static function TraerTodosLosProductosBase()
+	{
+		$obj = AccesoDatos::DameUnObjetoAcceso();
+		$consulta = $obj->RetornarConsulta("SELECT *, codigo_barra as codBarra ,path_foto as pathFoto FROM producto");
+		$consulta->execute();
+		return $consulta->fetchAll(PDO::FETCH_CLASS,"Producto");
 	}
 //--------------------------------------------------------------------------------//
 }
