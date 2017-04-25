@@ -107,5 +107,9 @@ class Producto
 		$consulta->execute();
 		return $consulta->fetchAll(PDO::FETCH_CLASS,"Producto");
 	}
+	public function GuardarBase()
+	{
+		
+	}
 //--------------------------------------------------------------------------------//
 }

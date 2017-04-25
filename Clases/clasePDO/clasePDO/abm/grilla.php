@@ -2,6 +2,7 @@
 	require_once('clases/producto.php');
 ?>
 <html>
+
 <head>
 	<title>Ejemplo de ALTA-LISTADO - con archivos -</title>
 
@@ -9,7 +10,11 @@
 		
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
-
+	<script>
+		function Borrar(id){
+			alert(id);
+		}
+	</script>
 </head>
 <body>
 	<a class="btn btn-info" href="index.html">Menu principal</a>
@@ -31,6 +36,7 @@ echo "<table class='table'>
 				<th>  COD. BARRA </th>
 				<th>  NOMBRE     </th>
 				<th>  FOTO       </th>
+				<th>  BORRAR     </th>
 			</tr> 
 		</thead>";   	
 
@@ -40,6 +46,7 @@ echo "<table class='table'>
 					<td>".$prod->GetCodBarra()."</td>
 					<td>".$prod->GetNombre()."</td>
 					<td><img src='archivos/".$prod->GetPathFoto()."' width='100px' height='100px'/></td>
+					<td><button onclick=Borrar(".$prod->GetCodBarra().")>Borrar</button></td>
 				</tr>";
 	}	
 echo "</table>";		
