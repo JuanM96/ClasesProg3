@@ -5,7 +5,7 @@ if (strlen($_POST['email']) != 0 && isset($_POST['password']) != 0) {
     }
     else {
         echo("<script>alert('Su email o contraseña son incorrectos')</script>");
-       // echo("<script>window.location='../index.html'</script>");
+        echo("<script>window.location='../index.html'</script>");
     }
 }
 else {
@@ -27,8 +27,8 @@ function Verficar($email,$password){
                     $ret = true;
                 }
             }
-            var_dump($array);
-            echo("<br>");
+            //var_dump($array);
+            //echo("<br>");
         }
         fclose($archivo);
 
