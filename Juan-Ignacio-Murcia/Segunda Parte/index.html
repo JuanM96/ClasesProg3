@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Log-in</title>
+
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div class="login-card">
+    <h1>Bienvenido</h1><br>
+  <form action="php/ConteinerAlta.php" method="POST" enctype="multipart/form-data">
+    <input type="text" name="numero" placeholder="Ingrese numero">
+    <input type="text" name="descripcion" placeholder="Ingrese descripcion">
+    <input type="text" name="pais" placeholder="Ingrese pais">
+    <input type="file" name="archivo">
+    <input type="submit" name="login" class="login login-submit" value="Cargar">
+  </form>
+
+  <div class="login-help">
+    <a href="php/Listado.php">Mostrar</a>
+  </div>
+</div>
+
+</body>
+
+</html>
