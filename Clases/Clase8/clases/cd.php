@@ -5,12 +5,12 @@ class cd
  	public $titulo;
   	public $cantante;
   	public $año;
-    function __construct($titulo,$cantante,$año)
+    /*function __construct($titulo,$cantante,$año)
     {
         $this->titulo = $titulo;
         $this->cantante = $cantante;
         $this->año = $año;
-    }
+    }*/
   	public function BorrarCd()
 	 {
 	 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 

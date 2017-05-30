@@ -31,8 +31,12 @@ $app->post('/', function (Request $request, Response $response) {
     return $response;
 });
 $app->post('/cds', function (Request $request, Response $response) {
-    $array = $response->getQueryParam();
-    $cd = new cd($array['titulo'],$array['cantante'],$array['año']);
+    $array = $request->getQueryParams();
+    //$cd = new cd($array['titulo'],$array['cantante'],$array['año']);
+    $cd = new cd();
+    $cd->titulo = $array['titulo'];
+    $cd->titulo = $array['cantante'];
+    $cd->titulo = $array['año'];
     $cd->InsertarElCd();
     //$response->getBody()->write("Hola Mundo slim POST");
     return $response;
