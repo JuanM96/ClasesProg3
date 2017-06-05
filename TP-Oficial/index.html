@@ -1,0 +1,87 @@
+<html lang="es">
+<head>
+<meta charset="utf8"/>
+<title>Estacionamiento</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script type="text/javascript" src="script/cusel.js"></script>
+<script type="text/javascript" src="script/jquery-1.8.2.js"></script>
+<script src="script/jquery.bpopup.min.js" type="text/javascript"></script>
+<script src="script/jquery.slimscroll.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="body_bottom">
+	<div id="head">
+	</div>
+	<div id="wrapper">
+		<div id="menu">
+			<ul id="menu_p">
+				<li>
+				<a href="" id="menu_new">Inicio</a>
+				<span></span>
+				</li>
+				<li>
+				<a href="" id="menu_forum">Estado</a>
+				<span></span>
+				</li>
+				<li>
+				<a href="">Entrada Vehiculo</a>
+				<span></span>
+				</li>
+                <li>
+				<a href="">Salida Vehiculo</a>
+				<span></span>
+				</li>
+				<li>
+				<a href="">Administración</a>
+				<span></span>
+				<ul>
+					<li><a href="">Alta Empleado</a></li>
+					<li><a href="">Baja Empleado</a></li>
+				</ul>
+				</li>
+
+			</ul>
+		</div>
+		<div id="content">
+			<div id="left_block">
+				<div class="block">
+					<div class="block_title">
+						<div class="bt_icon">
+							<img src="img/auth_icon.png" alt="">
+						</div>
+						<div class="bt_title">
+							 PANEL DE USUARIO
+						</div>
+					</div>
+					<div class="block_content">
+						<div id="login_block">
+							<div class="form_bg" id="login_form">
+								<form method="post" action="" name="uss_login_form">
+									<input type="text" name="uss_id" maxlength="10" class="login_field" value="USER ID" onclick="this.value=''">
+                                    <input type="password" name="uss_password" class="login_field" value="PASSWORD" maxlength="12" size="16" onclick="this.value=''">
+                                    <button type="submit" name="login_submit" onclick="uss_login_form.submit();">ENTRAR</button>
+									<div class="recoverypass">
+										<a style="font-size: 14px;" href="">QueHAGO?</a>
+									</div>
+									<table width="190" border="0" align="center" cellpadding="0" cellspacing="4">
+									<input type="hidden" name="process_login">
+									</table>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="block">
+				</div>
+			</div>
+			<div id="right_block">
+				<div class="explore">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
