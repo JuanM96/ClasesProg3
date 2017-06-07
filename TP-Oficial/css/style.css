@@ -590,7 +590,7 @@ text-shadow: 1px 1px 1px #000;
 }
 
 #login_block {
-	padding: 21px;
+	padding: 34px;
 }
 
 .form_bg {
@@ -608,6 +608,7 @@ text-shadow: 1px 1px 1px #000;
 	width: 193px;
 	height: 37px;
 	background: url(../img/input_bg.png) no-repeat;
+  background-size: 193px;
 	border: none;
 	color: #959ca3;
 	outline: none;
@@ -619,7 +620,7 @@ text-shadow: 1px 1px 1px #000;
 }
 
 #login_form button {
-	width: 217px;
+	width: 193px;
 	height: 39px;
 	background: url(../img/login_button.png) no-repeat;
 	text-align: center;
