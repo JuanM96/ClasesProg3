@@ -28,7 +28,7 @@ $app = new \Slim\App(["settings" => $config]);
 //require_once "saludo.php";
 
 
-$app->get('[/]', function (Request $request, Response $response) {    
+$app->get('/crearToken', function (Request $request, Response $response) {    
     $response->getBody()->write("GET => Bienvenido!!! ,a SlimFramework");
     $datos = array(
         'nombre' => 'Juan',
@@ -36,9 +36,17 @@ $app->get('[/]', function (Request $request, Response $response) {
         'edad' => 33
     );
     $token = AutentificadorJWT::CrearToken($datos);
-    var_dump($token);
-    AutentificadorJWT::VerificarToken($token);
-    return $response;
+    return $response->withjson($token);
+});
+$app->get('/verificarToken', function (Request $request, Response $response) {    
+    $datos = array(
+        'nombre' => 'Juan',
+        'apellido' => 'Perez',
+        'edad' => 33
+    );
+    $token = AutentificadorJWT::CrearToken($datos);
+    $ret = AutentificadorJWT::VerificarToken($token);
+    return $response->withjson($ret);
 });
 
 $app->post('[/]', function (Request $request, Response $response) {   
