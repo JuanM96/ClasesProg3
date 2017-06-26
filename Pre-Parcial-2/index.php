@@ -5,6 +5,8 @@ use \Psr\Http\Message\ResponseInterface as Response;
 require 'vendor/autoload.php';
 require 'clases/AccesoDatos.php';
 require 'clases/UsuarioApi.php';
+require 'clases/BicicletaApi.php';
+require 'clases/VentaApi.php';
 
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
@@ -21,6 +23,21 @@ $app->group('/usuario', function () {
   
 });
 
+$app->group('/bicicleta', function () {
+
+  $this->post('/guardar', \BicicletaApi::class . ':cargarBicicleta');
+  $this->get('/traer', \BicicletaApi::class . ':traerBicicletas');
+  $this->get('/traerPorColor', \BicicletaApi::class . ':traerBicicletasSegunColor');
+  $this->get('/traerPorId', \BicicletaApi::class . ':traerBicicletaSegunId');
+  $this->delete('/borrarPorId', \BicicletaApi::class . ':borrarBicicletaPorId');
+});
+
+$app->group('/venta', function () {
+
+  $this->post('/guardar', \VentaApi::class . ':cargarVenta');
+  $this->put('/modificar', \VentaApi::class . ':modificarVenta');
+  
+});
 // $app->group('/cd', function () {
  
 //   $this->get('/', \cdApi::class . ':traerTodos');
